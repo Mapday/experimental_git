@@ -3,7 +3,8 @@
 list =>    10  -->6  -->60 -->7  -->5
 	   100, 200, 300, 400, 500	
 	
-data_to_delete = 7
+//data_to_delete = 7
+//data_to_delete = 60
 struct node{
 	int data;
 	struct node* link;
