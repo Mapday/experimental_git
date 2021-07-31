@@ -1,0 +1,124 @@
+
+
+list =>    10  -->6  -->60 -->7  -->5
+	   100, 200, 300, 400, 500	
+	
+data_to_delete = 7
+struct node{
+	int data;
+	struct node* link;
+};
+
+
+void delete_data(struct node* head, int data_to_delete){
+
+	if(head == NULL){
+		printf("List is Empty\n");
+		return;
+	}
+
+	//if the data node is head
+	if(head -> data == data_to_delete){
+		printf("data found, to delete\n");
+		free(head);
+	}
+
+	struct node* tmp = head;
+	struct node* p;
+
+	while(tmp != NULL){ // 
+		if(tmp->link->data == data_to_delete){
+			printf("data found, to delete\n");
+			p = tmp->link;//400
+				
+			tmp = tmp->link->link;//NULL
+
+			if(tmp == NULL){
+				p->link = NULL;
+				free(tmp);	
+				return;
+			}
+
+			free(p);
+			return;
+		}
+		tmp = tmp -> link;// address of 60
+	}
+	printf("data not found to delete\n");
+}	
+
+
+
+
+--------------------------------------------
+
+storage classes
+
+auto      
+static
+extern
+register
+
+#include<stdio.h>
+
+int x;
+int x;
+int x;
+int y=10;
+static int abc = 10;
+
+extern void fun();
+int main()
+{
+	int var = 10;
+
+	{
+		int j = 2;
+		printf("j=%d\n",j);
+	
+	}
+	printf("%d",j);
+	static int sta_var = 2;
+
+	add();   // a = 11, b=3
+	add();   // a = 12, b=3
+
+}
+
+int add(){
+
+	static int a = 10;
+		
+	int y=2;
+	a++;
+	y++;   
+	printf("a = %d, y = %d\n",a,y);
+}
+
+
+================================
+command line arg
+stack
+heap
+data  ==> 
+code  ==> char *ptr = "hello"; 
+		ptr[0] = 'v';
+===============================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 		
+	
+	
